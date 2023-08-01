@@ -1,0 +1,53 @@
+body
+{
+    padding: 0px;
+    margin: 0px;
+    background-color: #212121;
+    color: white;
+    overflow-x: none;
+    border: 2px solid white;
+    width:99%;
+    height:auto;
+}
+
+.container{
+    position: relative;
+    left:0px;
+
+}
+
+.header{
+    border: 2px solid white;
+}
+
+.blogCollection{
+    margin-top:5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap:10px;
+    padding:10px 44px;
+}
+
+.card
+{
+    height: 400px;
+    width: 300px;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+
+.form
+{
+    width:500px;
+    height:600px;
+    border: 2px solid white;
+    position: absolute;
+    left:32%;
+    top:107px;
+    z-index: 1;
+    background-color: white;
+    color: black;
+    
+}
