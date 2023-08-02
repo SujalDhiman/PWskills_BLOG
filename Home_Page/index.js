@@ -22,13 +22,13 @@ saveBlogButton.addEventListener("click",function (){
 
     if(!(imageUrl === "" && blogTitle === "" && blogDescription === "" && blogDetails === ""))
     {
-    blogCollection.innerHTML+=`<div class="card" id="card-1">  
-    <img src=${imageUrl} alt="Img" id="blogImg" height="100px" width="100px">
-    <h2 class="title">${blogTitle}</h2>
-    <p class="shortDescription">${blogDescription}</p>
-    <p class="blogtitle hide">${blogDetails}</p>
-    <button class="readMore">Read More</button>
-</div>`
+        blogCollection.innerHTML+=`<div class="card" id="card-1">  
+        <img src=${imageUrl} alt="Img" class="blogImg" height="100px" width="100px">
+        <h2 class="title">${blogTitle}</h2>
+        <p class="shortDescription">${blogDescription}</p>
+        <p class="blogtitle" id="hide">${blogDetails}</p>
+        <button class="readMore">Read More</button>
+        </div>`
 
     closeFormButton.click()
     document.querySelector("#imgUrlUpload").value=""
@@ -41,5 +41,19 @@ saveBlogButton.addEventListener("click",function (){
         alert("Please specify fields")
     }
 
+    let readMoreButtons=document.querySelectorAll(".readMore")
+    for(let btn of readMoreButtons)
+    {
+        btn.addEventListener("click",(e)=>{
+           for(let child of e.target.parentElement.children)
+            {
+                if(child.tagName === "IMG")
+                   localStorage.setItem("ImageSRC",child.src)
+                else
+                   localStorage.setItem(child.className,child.innerText)
+            }
+        })
+    }
 })
+
 
