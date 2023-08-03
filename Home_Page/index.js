@@ -4,6 +4,9 @@ const closeFormButton=document.querySelector(".close")
 const blogCollection=document.querySelector(".blogCollection")
 const saveBlogButton=document.querySelector(".addBlog-2")
 
+
+localStorage.clear() //as execution starts clear the storage
+
 createBlogButton.addEventListener("click",function (){
     formLayout.classList.remove("hide")
 })
@@ -27,7 +30,7 @@ saveBlogButton.addEventListener("click",function (){
         <h2 class="title">${blogTitle}</h2>
         <p class="shortDescription">${blogDescription}</p>
         <p class="blogtitle" id="hide">${blogDetails}</p>
-        <button class="readMore">Read More</button>
+        <button class="readMore">Double click</button>
         </div>`
 
     closeFormButton.click()
@@ -52,6 +55,8 @@ saveBlogButton.addEventListener("click",function (){
                 else
                    localStorage.setItem(child.className,child.innerText)
             }
+            btn.innerHTML=`<a href="../Landing_Page/index.html"> Double Click</a>`
+            btn.click()
         })
     }
 })
